@@ -1,0 +1,26 @@
+qrcodelib.dll::QRinput_new
+qrcodelib.dll::QRinput_new2
+qrcodelib.dll::QRinput_append
+qrcodelib.dll::QRinput_getVersion
+qrcodelib.dll::QRinput_setVersion
+qrcodelib.dll::QRinput_getErrorCorrectionLevel
+qrcodelib.dll::QRinput_setErrorCorrectionLevel
+qrcodelib.dll::QRinput_free
+qrcodelib.dll::QRinput_check
+qrcodelib.dll::QRinput_Struct_new
+qrcodelib.dll::QRinput_Struct_setParity
+qrcodelib.dll::QRinput_Struct_appendInput
+qrcodelib.dll::QRinput_Struct_free
+qrcodelib.dll::QRinput_splitQRinputToStruct
+qrcodelib.dll::QRinput_Struct_insertStructuredAppendHeaders
+qrcodelib.dll::QRcode_encodeInput
+qrcodelib.dll::QRcode_encodeString
+qrcodelib.dll::QRcode_encodeString8bit
+qrcodelib.dll::QRcode_free
+qrcodelib.dll::QRcode_encodeInputStructured
+qrcodelib.dll::QRcode_encodeStringStructured
+qrcodelib.dll::QRcode_encodeString8bitStructured
+qrcodelib.dll::QRcode_List_size
+qrcodelib.dll::QRcode_List_free
+Total count is 24.
+qrcodelib.dll ÎÞ·¨ÅÐ¶Ïdll°æ±¾£¡
