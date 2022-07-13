@@ -1,0 +1,42 @@
+PACKAGE TeamEFAAllegro1 cdslmd 15.5 1C5D75ED840204AD2252 COMPONENTS="Allegro_PCB Allegro_Designer Allegro_Expert \
+	Allegro_performance Allegro_studio Allegro_PCB_Editor_230 Allegro_PCB_Editor_620 Allegro_PCB_Design_230 \
+	Allegro_PCB_Router_230 Allegro_PCB_Design_620 Allegro_PCB_SI_630_Suite Allegro_PCB_SI_230 Allegro_PCB_SI_620 \
+	Allegro_PCB_SI_630 Allegro_designer_suite Allegro_design_expert Allegro_Package_Designer_620 \
+	Allegro_Package_SI_620 Allegro_Package_SI_620_Suite Allegro_Pkg_Designer_620_Suite Allegro_RF_Modules_option_630 \
+	Allegro_SIP_Designer_630 Allegro_Design_Editor_620 Allegro_PCB_Router_210 Allegro_PCB_Router_610 \
+	OrCAD_PCB_Editor OrCAD_Signal_Explorer OrCAD_PCB_Designer_PSpice OrCAD_PCB_Designer OrCAD_Unison_Ultra \
+	OrCAD_Unison_EE OrCAD_Unison_PCB Capture_CIS_Studio OrCAD_Capture_CIS_option \
+	OrCAD_Capture_CIS_option+OrCAD_Unison_Ultra OrCAD_Capture_CIS_option+OrCAD_Unison_EE \
+	OrCAD_Capture_CIS_option+OrCAD_Unison_PCB OrCAD_Capture_CIS_option+OrCAD_PCB_Designer_PSpice" ck=49
+PACKAGE TeamEFAAllegro2 cdslmd 15.5 0CDD25BDE89437A4773C COMPONENTS="OrCAD_Capture_CIS_option+OrCAD_PCB_Designer \
+	OrCAD_Capture_CIS_option+Capture SPECCTRAQuest SPECCTRAQuest_Planner PowerIntegrity SPECCTRAQuest_SI_expert \
+	PCB_designer PCB_librarian_expert PCB_design_studio PCB_design_expert advanced_package_designer APD \
+	adv_package_engineer_expert adv_package_designer_expert SPECCTRA_expert SigNoise_Float \
+	SPECCTRAQuest_signal_expert CISoption+Capture OrCAD_PCB_Router OrCAD_PCB_Designer_PSpice OrCAD_PCB_Designer \
+	UNISON_SPECCTRA_6U SPECCTRA_Unison_Ultra SPECCTRA_Unison_PCB Unison_SPECCTRA_4U SPECCTRA_VT SPECCTRA_QE \
+	SPECCTRA_performance SPECCTRA_PCB SPECCTRA_HP SPECCTRA_expert_system SPECCTRA_expert SPECCTRA_DFM \
+	SPECCTRA_autoroute SPECCTRA_APD SPECCTRA_ADV SPECCTRA_6U SPECCTRA_256U adv_package_engineer_expert \
+	adv_package_designer_expert Allegro_CAD_Interface Allegro_Librarian Allegro_PCB Allegro_PCB_Interface \
+	Allegro_Studio Allegro_Symbol Allegro_Viewer_Plus Allegro_designer_suite Capture CaptureCIS Capture_CIS_Studio \
+	Checkplus_Expert ConceptHDL Concept_HDL_expert Concept_HDL_rules_checker Concept_HDL_studio" ck=109
+PACKAGE TeamEFAAllegro3 cdslmd 15.5 3C6DA50DDEFC065D7BA6 COMPONENTS="DFM_6SUPUC_ALL DISCRETE_LIB EB_6SUPUC_ALL \
+	EDIF_Netlist_Interface EDIF_Schematic_Interface EMCdisplay EMControl EMControl_Float EMI_ALL EditBase_ALL \
+	EditFST_ALL EditPlace_ALL EditRoute_ALL HYB_6SUPUC_ALL IDF_Bi_Directional_Interface Layout LayoutEE LayoutPlus \
+	OrCAD PB_6SUPUC_ALL PB_USUPUC_ALL PCB_studio_variants PE_Librarian PPRoute_ALL PSpice PSpiceAD PSpiceBasics \
+	RB_6SUPUC RB_6SUPUC_ALL PlaceBase_ALL PlaceOrIPlace_ALL RouteADV RouteADV_ALL RouteBase RouteBase_ALL RouteDF \
+	RouteDFM_ALL RouteFST RouteFST_ALL RouteHYB_ALL RouteMVIA_ALL RouteMin_ALL RouteOrEdit_ALL SPECCTRAQuest \
+	SPECCTRAQuest_Planner SPECCTRAQuest_SI_expert SPECCTRAQuest_signal_expert SPECCTRAQuest_signal_explorer \
+	SPECCTRA_designer SPECCTRA_expert_system SQ_Digital_Logic_SI_Lib SQ_FPGA_SI_Lib SQ_Memory_SI_Lib \
+	SQ_Microprocessor_SI_Lib SigNoise SigNoiseCS SigNoiseEngineer SigNoiseStdDigLib SigNoise_Float Sigxp Sigxp_tier \
+	Sigxp_tier_EXPERT SimVision StudioPSpiceAD ViewBase ViewBaseEngr_ALL ViewBase_ALL adv_package_designer_expert \
+	adv_package_engineer_expert advanced_package_designer allegro_dfa allegro_dfa_att allegro_non_partner \
+	allegro_symbol allegroprance archiver arouter ipc_in ipc_out packager pcb_editor pcb_interactive pcb_prep pcomp \
+	placement ptc_in ptc_out shapefill signal_explorer signoise sigxp_explorer skillDev PSpiceADStudio PSpiceStudio \
+	PSpiceAAStudio PSpiceAAOptimizer AWBAA BOARDQUEST floorplan LayoutEngEd PSpiceAA PSpiceADAA optimizer \
+	OptimizerAA AWBSimulator SPECCTRAQuest_expert Cadence_Chip_IO_Planner" ck=80
+FEATURE TeamEFAAllegro1 cdslmd 15.5 permanent uncounted AC0E650F72361EBFE720 VENDOR_STRING=Cadence HOSTID=ANY \
+	ISSUER="Team EFA 2005" NOTICE="Only for Education and Research Purpose" ck=32
+FEATURE TeamEFAAllegro2 cdslmd 15.5 permanent uncounted DC9EF54F6D4748F095C2 VENDOR_STRING=Cadence HOSTID=ANY \
+	ISSUER="Team EFA 2005" NOTICE="Only for Education and Research Purpose" ck=56
+FEATURE TeamEFAAllegro3 cdslmd 15.5 permanent uncounted 6CAEE58F9CE4CA019BCC VENDOR_STRING=Cadence HOSTID=ANY \
+	ISSUER="Team EFA 2005" NOTICE="Only for Education and Research Purpose" ck=92
