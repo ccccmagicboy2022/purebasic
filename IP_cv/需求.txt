@@ -1,0 +1,24 @@
+set dnsservers name="Local Area Connection" source=dhcp
+set dnsservers "Local Area Connection" static 10.0.0.1 primary
+set address name="Local Area Connection" source=dhcp
+
+netsh interface ip set dns "Local Area Connection" source=static addr=192.168.0.11 register=primary --设置主DNS服务器地址,DC的DNS有转发
+netsh interface ip add dns "Local Area Connection" 202.101.98.55 index=2 --设置第二DNS服务器地址,直接指定外部DNS服务器
+netsh interface ip set wins name="Local Area Connection" source=static addr=192.168.0.11 primary --设置主wins服务器地址,某一DC的地址
+netsh interface ip add wins "Local Area Connection" 192.168.0.10 index=2 --设置主wins服务器地址,另一DC的地址
+
+
+netsh interface set interface name="本地连接" admin=enabled
+netsh interface set interface name="Local Area Connection" admin=disabled
+netsh interface ip show interfaces
+
+
+把以上命令实现图形化
+
+设置IP地址
+set address name="本地连接" source=static addr=10.1.2.90 mask=255.255.255.0
+netsh interface ip set address "Ethernet" dhcp
+netsh interface ip set address "Ethernet" static 192.168.0.99
+
+
+

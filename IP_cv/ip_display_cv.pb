@@ -1,0 +1,213 @@
+  Global  NewList ip_list.s()
+  Global  NewList mac_list.s()
+
+  Procedure.l GetNetworkComputerIP(computer$) ; returns ip adress of hostname/IP$
+    ; Originally posted by Hi-Toro
+    ; Posted: Sun Feb 16, 2003 8:27 pm
+    ; http://purebasicforums.com/english/viewtopic.php?t=5151
+    ; modified on 1.3.2005 by ABBKlaus
+    ; modified on 8.12.2007 by ABBKlaus (unicode compatible)
+    Protected *Buffer,*host.HOSTENT,ip.l
+   
+    If computer$
+      *Buffer=AllocateMemory(MemoryStringLength(@computer$)+1)
+      If *Buffer
+        PokeS(*Buffer,computer$,-1,#PB_Ascii)
+        *host = gethostbyname_(*Buffer) ; Get host information for named computer...
+        If *host
+          ip = PeekL(PeekL(*host\h_addr_list))
+        EndIf
+        FreeMemory(*Buffer)
+      EndIf
+    EndIf
+   
+    ProcedureReturn ip
+  EndProcedure
+  
+  Procedure.s MacToString(*membuffer) ; returns MAC adress in string format
+    Protected MAC.s,i.l
+   
+    MAC = ""
+    For i=0 To 5
+      MAC+RSet(Hex(PeekB(*membuffer+i)&$FF),2,"0")
+      If i<5
+        MAC+":"
+      EndIf
+    Next
+   
+    ProcedureReturn MAC
+  EndProcedure
+  
+  Procedure.s GetMacFromIP(IP$) ; returns MAC adress from IP
+    Protected ip.l,thisip.l,maclen.l,*buffer,mac.s=""
+   
+    ip=GetNetworkComputerIP(IP$)
+   
+    maclen=6
+    *buffer=AllocateMemory(8)
+    If *buffer
+      If SendARP_(ip,ip,*buffer,@maclen)=#NO_ERROR
+        mac=MacToString(*buffer)
+      Else
+        Debug "SendARP failed"
+      EndIf
+      FreeMemory(*buffer)
+    EndIf
+   
+    ProcedureReturn mac
+  EndProcedure
+  
+  Procedure MyTimer()
+    ClearList(ip_list())
+    ClearList(mac_list())
+    If  ExamineIPAddresses() 
+      Result = NextIPAddress()
+      While(Result)
+        AddElement(ip_list())
+        ip_list() = IPString(Result)
+        Result  = NextIPAddress()
+      Wend
+      ForEach ip_list()
+        AddElement(mac_list())
+        mac_list()  = GetMacFromIP(ip_list())
+      Next
+    Else
+      MessageBox_(WindowID(hwnd), "请检查网络连接！IP等", "..cv..", #MB_OK | #MB_ICONERROR|#MB_SYSTEMMODAL)
+      KillTimer_(0, 0)
+      End
+    EndIf
+    
+    For i=0 To ListSize(ip_list())  - 1
+      If StartDrawing(CanvasOutput(i))
+        Box(0, 0, 400, 60, RGB(Random(255), Random(255), Random(255)))
+        DrawingFont(FontID(0))
+        SelectElement(ip_list(), i)
+        FrontColor($00ff00)
+        BackColor($000000)
+        DrawText(0,0, "IP : "+ip_list())
+        SelectElement(mac_list(), i)
+        DrawText(0,30, "MAC: "+mac_list())        
+        StopDrawing()
+      Else
+        MessageBox_(GetFocus_(), "new interface added! retry it!", "cv", #MB_SYSTEMMODAL|#MB_ICONINFORMATION|#MB_DEFBUTTON1)
+        End
+      EndIf  
+    Next  i
+    
+  EndProcedure    
+  
+  If  InitNetwork()
+    If  ExamineIPAddresses() 
+      Result = NextIPAddress()
+      While(Result)
+        AddElement(ip_list())
+        ip_list() = IPString(Result)
+        Result  = NextIPAddress()
+      Wend
+      ForEach ip_list()
+        AddElement(mac_list())
+        mac_list()  = GetMacFromIP(ip_list())
+      Next
+    Else
+      MessageBox_(WindowID(hwnd), "请检查网络连接！IP等", "..cv..", #MB_OK | #MB_ICONERROR|#MB_SYSTEMMODAL)
+      KillTimer_(0, 0)
+      End
+    EndIf
+  Else
+    MessageBox_(#Null, "请检查网络连接！", "..cv..", #MB_OK | #MB_ICONERROR)
+    End
+  EndIf
+
+
+  hwnd  = OpenWindow(#PB_Any,100,100,400, ListSize(ip_list())*60,"IP Display cv 2012.12@" + Hostname(), #PB_Window_ScreenCentered|#PB_Window_SystemMenu|#PB_Window_MinimizeGadget)
+  SetWindowPos_(WindowID(hwnd), #HWND_TOPMOST, 0, 0, 0, 0, #SWP_NOMOVE|#SWP_NOSIZE)  
+  
+  For i=0 To ListSize(ip_list())  - 1 Step  1
+    CanvasGadget(i,0,i*60,400,60)
+  Next  i
+  LoadFont(0,"Courier New", 20)
+  
+  AddKeyboardShortcut(hwnd, #PB_Shortcut_Escape, 0)
+  
+  SetTimer_(WindowID(hwnd), 0, 2500, @MyTimer())
+  
+  menu1 = CreatePopupMenu(#PB_Any)
+  If menu1
+    MenuItem(1, "COPY")
+  EndIf  
+  
+  Repeat
+    Event.l = WaitWindowEvent()
+    
+    Select  Event
+      ;===========================
+      Case	#WM_RBUTTONDOWN
+        DisplayPopupMenu(menu1, WindowID(hwnd))        
+      Case  #PB_Event_Menu
+        Select EventMenu()
+          Case  0
+            quit  = #True
+          Case  1
+            output.s  = ""
+            For i=0 To  ListSize(ip_list()) - 1
+              SelectElement(ip_list(), i)
+              SelectElement(mac_list(), i)
+              output =  output + ip_list() + Chr(10) + mac_list() + Chr(10)
+            Next
+            SetClipboardText(output)
+        EndSelect
+      ;===========================
+      Case  #PB_Event_Gadget
+        Select  EventGadget()
+          Case  0
+            ;
+          Default
+            ;
+        EndSelect
+    EndSelect
+  Until Event = #PB_Event_CloseWindow Or  quit  = #True         
+  
+  KillTimer_(WindowID(hwnd), 0)
+  CloseWindow(hwnd)
+  FreeList(ip_list())
+  FreeList(mac_list())
+  
+  End
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+;
+; PureBUILD Build = 23 [generated by PureBUILD Plugin]
+; IDE Options = PureBasic 4.60 (Windows - x86)
+; CursorPosition = 156
+; FirstLine = 126
+; Folding = -
+; EnableXP
+; UseIcon = ip_display.ico
+; Executable = Release\IP_display_cv.exe
+; EnableCompileCount = 88
+; EnableBuildCount = 21
+; EnableExeConstant
+; IncludeVersionInfo
+; VersionField0 = 1,0,0,%BUILDCOUNT
+; VersionField1 = 1,0,0,%BUILDCOUNT
+; VersionField2 = cv
+; VersionField3 = cv
+; VersionField4 = 1,0,0,%BUILDCOUNT
+; VersionField5 = 1,0,0,%BUILDCOUNT
+; VersionField6 = cv
+; VersionField7 = cv
+; VersionField8 = cv
