@@ -1,0 +1,6 @@
+LIBRARY cvPXILib_PB.dll
+
+EXPORTS
+get_fifo_status_pb@0		@1
+select_card_pb@0			@2
+visa_find_rsrc_ex@0		@3

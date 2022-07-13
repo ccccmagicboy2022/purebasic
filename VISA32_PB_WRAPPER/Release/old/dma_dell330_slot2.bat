@@ -1,0 +1,1 @@
+.\plx9054_dma_controlpanel.exe visa://192.168.1.2/PXI0::CHASSIS1::SLOT2::INSTR

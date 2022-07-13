@@ -1,0 +1,4 @@
+F241_PXI5871B_DLL::check_ocx()
+F241_PXI5871B_DLL::pxi5871_r_pinout_thread()
+Total count is 2.
+F241_PXI5871B.dll version is : v1.0.0.8

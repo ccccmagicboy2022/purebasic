@@ -1,0 +1,31 @@
+; Form Designer for Purebasic - 5.0
+; Warning: this file uses a strict syntax, if you edit it, make sure to respect the Form Designer limitation or it won't be opened again.
+
+Global hwnd
+
+Enumeration #PB_Compiler_EnumerationValue
+  #Toolbar_0
+  #Toolbar_1
+  #Toolbar_3
+EndEnumeration
+
+Procedure Inithwnd()
+  hwnd = OpenWindow(#PB_Any, 0, 0, 500, 300, "plx9054_eeprom_access", #PB_Window_SystemMenu | #PB_Window_MinimizeGadget | #PB_Window_ScreenCentered)
+  CreateToolbar(0, WindowID(hwnd))
+  ToolBarImageButton(#Toolbar_0,ImageID())
+  ToolBarToolTip(0, #Toolbar_0, "读取")
+  ToolBarImageButton(#Toolbar_1,ImageID())
+  ToolBarToolTip(0, #Toolbar_1, "修改")
+  ToolBarSeparator()
+  ToolBarImageButton(#Toolbar_3,ImageID())
+  ToolBarToolTip(0, #Toolbar_3, "关于")
+  CreateStatusBar(0, WindowID(hwnd))
+  AddStatusBarField(250)
+  StatusBarText(0, 0, "BASIC")
+  AddStatusBarField(240)
+  StatusBarText(0, 1, "EXT")
+  CreateMenu(0, WindowID(hwnd))
+  MenuTitle("MenuTitle")
+  MenuTitle("MenuTitle")
+EndProcedure
+

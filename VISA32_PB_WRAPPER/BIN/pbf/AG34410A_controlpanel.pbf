@@ -1,0 +1,41 @@
+; Form Designer for Purebasic - 5.0
+; Warning: this file uses a strict syntax, if you edit it, make sure to respect the Form Designer limitation or it won't be opened again.
+
+Global hwnd
+
+Global Panel_0, String_0
+
+Enumeration #PB_Compiler_EnumerationValue
+  #Toolbar_0
+  #Toolbar_1
+  #Toolbar_2
+  #Toolbar_3
+  #Toolbar_4
+  #Toolbar_6
+EndEnumeration
+
+Procedure Inithwnd()
+  hwnd = OpenWindow(#PB_Any, 0, 0, 570, 260, "AG34410A_controlpanel", #PB_Window_SystemMenu | #PB_Window_MinimizeGadget | #PB_Window_ScreenCentered | #PB_Window_Minimize)
+  CreateToolbar(0, WindowID(hwnd))
+  ToolBarImageButton(#Toolbar_0,ImageID())
+  ToolBarImageButton(#Toolbar_1,ImageID())
+  ToolBarImageButton(#Toolbar_2,ImageID())
+  ToolBarImageButton(#Toolbar_3,ImageID())
+  ToolBarImageButton(#Toolbar_4,ImageID())
+  ToolBarSeparator()
+  ToolBarImageButton(#Toolbar_6,ImageID())
+  ToolBarToolTip(0, #Toolbar_6, "关于")
+  CreateStatusBar(0, WindowID(hwnd))
+  AddStatusBarField(300)
+  StatusBarText(0, 0, "Label")
+  AddStatusBarField(200)
+  StatusBarText(0, 1, "Label")
+  Panel_0 = PanelGadget(#PB_Any, 0, ToolBarHeight(0) + 0, 560, 195)
+  AddGadgetItem(Panel_0, -1, "电压DCV")
+  String_0 = StringGadget(#PB_Any, 0, 0, 560, 58, "")
+  AddGadgetItem(Panel_0, -1, "电流DCI")
+  AddGadgetItem(Panel_0, -1, "电阻")
+  AddGadgetItem(Panel_0, -1, "频率")
+  CloseGadgetList()
+EndProcedure
+

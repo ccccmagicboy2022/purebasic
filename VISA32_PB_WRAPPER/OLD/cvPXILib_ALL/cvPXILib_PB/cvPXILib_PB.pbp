@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://www.purebasic.com/namespace" version="1.0" creator="PureBasic 4.50 (Windows - x86)">
+  <section name="config">
+    <options closefiles="1" openmode="0" name="cvPXILib_PB"/>
+    <comment>
+      cvPXILib_PB
+    </comment>
+    <buildwindow autoclose="1"/>
+  </section>
+  <section name="data">
+    <explorer view="Include\" pattern="0"/>
+    <log show="1"/>
+    <lastopen date="2012-02-03 14:09" user="Administrator" host="PC-20110615ZSLM"/>
+  </section>
+  <section name="files">
+    <file name="cvPXILib_PB.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1"/>
+      <fingerprint md5="5b581c392fdfb73cd0b321033c425256"/>
+    </file>
+    <file name="cvPXILib_PB_tester.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1"/>
+      <fingerprint md5="d36734b78d78678f339c216967b905fa"/>
+    </file>
+    <file name="Include\count_cvPXILib_functions.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0"/>
+      <fingerprint md5="967ea961f10b62a60c6bf4df238a2898"/>
+    </file>
+    <file name="Include\get_fifo_status_pb.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0"/>
+      <fingerprint md5="384a6946136eaf84cc15be87899796b4"/>
+    </file>
+    <file name="Include\interrupt_checker_pb.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0"/>
+      <fingerprint md5="8c884460adbbed652c0fb065319cb630"/>
+    </file>
+    <file name="Include\select_card_pb.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="0"/>
+      <fingerprint md5="b5dc417378b971532a723d3ee4a9dfaf"/>
+    </file>
+    <file name="Include\select_plx9054_card.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1"/>
+      <fingerprint md5="39d3ff0db79ea80713c2ba5fbcd86931"/>
+    </file>
+    <file name="Include\visa_find_rsrc_ex.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1"/>
+      <fingerprint md5="f04f8e3b8d131635527ccccf9b905499"/>
+    </file>
+    <file name="Include\About.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1"/>
+      <fingerprint md5="01f3b29d1e966cf355b183fe7ac30913"/>
+    </file>
+  </section>
+  <section name="targets">
+    <target name="cvPXILib_PB.dll" enabled="1" default="1">
+      <inputfile value="cvPXILib_PB.pb"/>
+      <outputfile value="Release\cvPXILib_PB.dll"/>
+      <executable value="Release\cvPXILib_PB.dll"/>
+      <options xpskin="1"/>
+      <format exe="dll" cpu="0"/>
+      <debugger custom="1" type="standalone"/>
+      <compilecount enable="1" value="95"/>
+      <buildcount enable="1" value="88"/>
+      <execonstant enable="1"/>
+      <versioninfo enable="1">
+        <field0 value="1,0,0,%BUILDCOUNT"/>
+        <field1 value="1,0,0,%BUILDCOUNT"/>
+        <field2 value="cv"/>
+        <field3 value="cv"/>
+        <field4 value="1,0,0,%BUILDCOUNT"/>
+        <field5 value="1,0,0,%BUILDCOUNT"/>
+      </versioninfo>
+    </target>
+    <target name="cvPXILib_PB_tester.exe" enabled="1" default="0">
+      <inputfile value="cvPXILib_PB_tester.pb"/>
+      <outputfile value="Release\cvPXILib_PB_tester.exe"/>
+      <executable value="Release\cvPXILib_PB_tester.exe"/>
+      <options xpskin="1" debug="1"/>
+      <icon enable="1">
+        Include\Icon\tester.ico
+      </icon>
+      <compilecount enable="1" value="102"/>
+      <buildcount enable="1" value="92"/>
+      <execonstant enable="1"/>
+      <versioninfo enable="1">
+        <field0 value="1,0,0,%BUILDCOUNT"/>
+        <field1 value="1,0,0,%BUILDCOUNT"/>
+        <field2 value="cv"/>
+        <field3 value="cv"/>
+        <field4 value="1,0,0,%BUILDCOUNT"/>
+        <field5 value="1,0,0,%BUILDCOUNT"/>
+      </versioninfo>
+    </target>
+  </section>
+</project>

@@ -1,0 +1,21 @@
+; Form Designer for Purebasic - 5.0
+; Warning: this file uses a strict syntax, if you edit it, make sure to respect the Form Designer limitation or it won't be opened again.
+
+Global hwnd
+
+Global visa_dev, visa_dev_instr, visa_gpib, visa_rs232, visa_pxi_pci, visa_pxi_pci_model, visa_usb, visa_usb_model, visa_lxi
+
+Procedure Inithwnd()
+  hwnd = OpenWindow(#PB_Any, 0, 0, 430, 160, "select_visa_bus", #PB_Window_SystemMenu | #PB_Window_MinimizeGadget | #PB_Window_WindowCentered)
+  SetWindowColor(hwnd, RGB(255,255,128))
+  visa_dev = OptionGadget(#PB_Any, 10, 10, 200, 20, select_visa_device)
+  visa_dev_instr = OptionGadget(#PB_Any, 220, 10, 200, 20, select_visa_device(INSTR))
+  visa_gpib = OptionGadget(#PB_Any, 10, 40, 200, 20, select_visa_gpib_device)
+  visa_rs232 = OptionGadget(#PB_Any, 220, 40, 200, 20, select_visa_serialport)
+  visa_pxi_pci = OptionGadget(#PB_Any, 10, 70, 200, 20, select_visa_pci_pxi_card)
+  visa_pxi_pci_model = OptionGadget(#PB_Any, 220, 70, 200, 20, "select_visa_pci_pxi_card(model)")
+  visa_usb = OptionGadget(#PB_Any, 10, 100, 200, 20, "select_visa_usb_device")
+  visa_usb_model = OptionGadget(#PB_Any, 220, 100, 200, 20, "select_visa_usb_device(model)")
+  visa_lxi = OptionGadget(#PB_Any, 10, 130, 200, 20, "input_visa_LXI")
+EndProcedure
+

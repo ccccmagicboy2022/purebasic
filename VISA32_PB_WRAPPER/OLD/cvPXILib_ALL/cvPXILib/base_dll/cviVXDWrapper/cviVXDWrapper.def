@@ -1,0 +1,19 @@
+LIBRARY cviVXDWrapper.dll
+
+EXPORTS
+CVILowLevelSupportDriverLoaded@0		@1
+CVI_inp@4				@2
+CVI_inpd@4				@3
+CVI_inpw@4				@4
+CVI_outp@8				@5
+CVI_outpd@8				@6
+CVI_outpw@8				@7
+DisableInterrupts			@8
+EnableInterrupts			@9
+GetInterruptState			@10
+MapPhysicalMemory@16			@11
+ReadFromPhysicalMemory@12		@12
+ReadFromPhysicalMemoryEx@16		@13
+UnMapPhysicalMemory@4			@14
+WriteToPhysicalMemory@12			@15
+WriteToPhysicalMemoryEx@16			@16

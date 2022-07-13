@@ -1,0 +1,1 @@
+.\plx9054_eeprom_user_data_viewer.exe visa://192.168.1.15/PXI0::CHASSIS1::SLOT11::INSTR

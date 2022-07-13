@@ -1,0 +1,13 @@
+; Form Designer for Purebasic - 5.0
+; Warning: this file uses a strict syntax, if you edit it, make sure to respect the Form Designer limitation or it won't be opened again.
+
+Global hwnd
+
+Global refresh_bg, lxi_lig
+
+Procedure Inithwnd()
+  hwnd = OpenWindow(#PB_Any, 0, 0, 250, 190, "select_visa_lxi_device", #PB_Window_SystemMenu | #PB_Window_MinimizeGadget | #PB_Window_ScreenCentered)
+  refresh_bg = ButtonGadget(#PB_Any, 10, 10, 30, 30, Ë¢ÐÂ)
+  lxi_lig = ListIconGadget(#PB_Any, 10, 50, 230, 130, "Column 1", 100, #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect | #PB_ListIcon_AlwaysShowSelection)
+EndProcedure
+

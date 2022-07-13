@@ -1,0 +1,1 @@
+.\PCI_CFG_viewer.exe visa://192.168.0.102/PXI0::CHASSIS1::SLOT2::INSTR

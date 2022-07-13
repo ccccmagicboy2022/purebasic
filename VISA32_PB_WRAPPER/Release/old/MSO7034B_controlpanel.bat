@@ -1,0 +1,1 @@
+.\MSO7034B_controlpanel.exe USB0::0x0957::0x173D::MY50340152::INSTR

@@ -1,0 +1,1 @@
+.\goto_cv_style_eeprom.exe visa://192.168.1.2/PXI0::CHASSIS1::SLOT1::INSTR

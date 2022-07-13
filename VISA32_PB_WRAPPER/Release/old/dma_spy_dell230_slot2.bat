@@ -1,0 +1,1 @@
+.\plx9054_dma_spy.exe visa://192.168.0.102/PXI0::CHASSIS1::SLOT2::INSTR

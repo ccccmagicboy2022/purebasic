@@ -1,0 +1,42 @@
+; Form Designer for Purebasic - 5.0
+; Warning: this file uses a strict syntax, if you edit it, make sure to respect the Form Designer limitation or it won't be opened again.
+
+Global hwnd
+
+Global text0_tg, send_bg, read_bg, send_and_read_bg, history_ecg, command_sg, response_sg, text1_tg
+
+Enumeration #PB_Compiler_EnumerationValue
+  #Toolbar_0
+  #Toolbar_1
+  #Toolbar_2
+  #Toolbar_3
+  #Toolbar_4
+  #Toolbar_6
+EndEnumeration
+
+Procedure Inithwnd()
+  hwnd = OpenWindow(#PB_Any, 0, 0, 560, 240, "visa_interactive_io", #PB_Window_SystemMenu | #PB_Window_MinimizeGadget | #PB_Window_ScreenCentered)
+  CreateToolbar(0, WindowID(hwnd))
+  ToolBarImageButton(#Toolbar_0,ImageID())
+  ToolBarImageButton(#Toolbar_1,ImageID())
+  ToolBarImageButton(#Toolbar_2,ImageID())
+  ToolBarImageButton(#Toolbar_3,ImageID())
+  ToolBarImageButton(#Toolbar_4,ImageID())
+  ToolBarSeparator()
+  ToolBarImageButton(#Toolbar_6,ImageID())
+  ToolBarToolTip(0, #Toolbar_6, "aaaa")
+  CreateStatusBar(0, WindowID(hwnd))
+  AddStatusBarField(300)
+  StatusBarText(0, 0, "Label")
+  AddStatusBarField(200)
+  StatusBarText(0, 1, "Label")
+  text0_tg = TextGadget(#PB_Any, 10, ToolBarHeight(0) + 14, 70, 20, Command:)
+  send_bg = ButtonGadget(#PB_Any, 20, ToolBarHeight(0) + 40, 100, 25, Send Command)
+  read_bg = ButtonGadget(#PB_Any, 140, ToolBarHeight(0) + 40, 100, 25, Read Response)
+  send_and_read_bg = ButtonGadget(#PB_Any, 260, ToolBarHeight(0) + 40, 100, 25, Send & Read)
+  history_ecg = ExplorerComboGadget(#PB_Any, 390, ToolBarHeight(0) + 10, 160, 20, "")
+  command_sg = StringGadget(#PB_Any, 80, ToolBarHeight(0) + 10, 300, 20, "")
+  response_sg = StringGadget(#PB_Any, 10, ToolBarHeight(0) + 105, 540, 80, "", #PB_String_ReadOnly)
+  text1_tg = TextGadget(#PB_Any, 10, ToolBarHeight(0) + 80, 200, 20, Instrument Response:)
+EndProcedure
+

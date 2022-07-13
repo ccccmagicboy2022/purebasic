@@ -1,0 +1,20 @@
+# Microsoft Developer Studio Generated Dependency File, included by cvPXILib.mak
+
+.\cvPXILib.cpp : \
+	".\cvPXILib.h"\
+	".\import.h"\
+	".\Include\PciRegs.h"\
+	".\Include\PciTypes.h"\
+	".\Include\PexApi.h"\
+	".\Include\Plx.h"\
+	".\Include\PlxApi.h"\
+	".\Include\PlxDefCk.h"\
+	".\Include\PlxInit.h"\
+	".\Include\PlxStat.h"\
+	".\Include\PlxTypes.h"\
+	".\StdAfx.h"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	

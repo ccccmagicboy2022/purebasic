@@ -1,0 +1,18 @@
+; Form Designer for Purebasic - 5.0
+; Warning: this file uses a strict syntax, if you edit it, make sure to respect the Form Designer limitation or it won't be opened again.
+
+Global hwnd
+
+Global float_sg, hex_tg, hex_sg, byte_order_bg, endian_bg, less_accurate, more_accurate
+
+Procedure Inithwnd()
+  hwnd = OpenWindow(#PB_Any, 0, 0, 300, 70, float<->hex, #PB_Window_SystemMenu | #PB_Window_MinimizeGadget | #PB_Window_ScreenCentered)
+  float_sg = StringGadget(#PB_Any, 30, 10, 200, 20, "")
+  hex_tg = TextGadget(#PB_Any, 10, 45, 20, 20, 0x)
+  hex_sg = StringGadget(#PB_Any, 30, 40, 200, 20, "")
+  byte_order_bg = ButtonGadget(#PB_Any, 240, 40, 20, 20, B)
+  endian_bg = ButtonGadget(#PB_Any, 270, 40, 20, 20, E)
+  less_accurate = ButtonGadget(#PB_Any, 240, 10, 20, 20, "<-")
+  more_accurate = ButtonGadget(#PB_Any, 270, 10, 20, 20, "->")
+EndProcedure
+

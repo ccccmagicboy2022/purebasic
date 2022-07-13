@@ -1,0 +1,17 @@
+cviVXDWrapper.dll::CVILowLevelSupportDriverLoaded
+cviVXDWrapper.dll::CVI_inp
+cviVXDWrapper.dll::CVI_inpd
+cviVXDWrapper.dll::CVI_inpw
+cviVXDWrapper.dll::CVI_outp
+cviVXDWrapper.dll::CVI_outpd
+cviVXDWrapper.dll::CVI_outpw
+cviVXDWrapper.dll::DisableInterrupts
+cviVXDWrapper.dll::EnableInterrupts
+cviVXDWrapper.dll::GetInterruptState
+cviVXDWrapper.dll::MapPhysicalMemory
+cviVXDWrapper.dll::ReadFromPhysicalMemory
+cviVXDWrapper.dll::ReadFromPhysicalMemoryEx
+cviVXDWrapper.dll::UnMapPhysicalMemory
+cviVXDWrapper.dll::WriteToPhysicalMemory
+cviVXDWrapper.dll::WriteToPhysicalMemoryEx
+Total count is 16.

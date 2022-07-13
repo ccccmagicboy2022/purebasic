@@ -1,0 +1,33 @@
+; Form Designer for Purebasic - 5.0
+; Warning: this file uses a strict syntax, if you edit it, make sure to respect the Form Designer limitation or it won't be opened again.
+
+Global Window_0
+
+Global Tree_0, Panel_0
+
+Enumeration #PB_Compiler_EnumerationValue
+  #Toolbar_0
+  #Toolbar_1
+  #Toolbar_2
+EndEnumeration
+
+Procedure InitWindow_0()
+  Window_0 = OpenWindow(#PB_Any, 0, 0, 610, 400, "", #PB_Window_SystemMenu)
+  CreateToolbar(0, WindowID(Window_0))
+  ToolBarImageButton(#Toolbar_0,ImageID())
+  ToolBarImageButton(#Toolbar_1,ImageID())
+  ToolBarImageButton(#Toolbar_2,ImageID())
+  CreateStatusBar(0, WindowID(Window_0))
+  AddStatusBarField(50)
+  AddStatusBarField(50)
+  StatusBarText(0, 1, "Label")
+  CreateMenu(0, WindowID(Window_0))
+  MenuTitle("MenuTitle")
+  MenuTitle("MenuTitle")
+  Tree_0 = TreeGadget(#PB_Any, 0, ToolBarHeight(0) + 0, 220, 330)
+  Panel_0 = PanelGadget(#PB_Any, 220, ToolBarHeight(0) + 0, 390, 330)
+  AddGadgetItem(Panel_0, -1, "Tab 1")
+  AddGadgetItem(Panel_0, -1, "tabbb")
+  CloseGadgetList()
+EndProcedure
+

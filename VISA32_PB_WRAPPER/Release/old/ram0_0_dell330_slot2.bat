@@ -1,0 +1,1 @@
+.\plx9054_ram0_0_viewer.exe visa://192.168.1.2/PXI0::CHASSIS1::SLOT2::INSTR

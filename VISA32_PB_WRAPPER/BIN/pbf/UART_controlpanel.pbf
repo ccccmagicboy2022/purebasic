@@ -1,0 +1,49 @@
+; Form Designer for Purebasic - 5.0
+; Warning: this file uses a strict syntax, if you edit it, make sure to respect the Form Designer limitation or it won't be opened again.
+
+Global hwnd
+
+Global Panel_0, Combo_2, Combo_2_Copy1, Combo_2_Copy1_Copy1, Combo_2_Copy1_Copy2, Text_0, Text_0_Copy1, Text_0_Copy2, Text_0_Copy3
+
+Enumeration #PB_Compiler_EnumerationValue
+  #Toolbar_0
+  #Toolbar_1
+  #Toolbar_3
+EndEnumeration
+
+Enumeration #PB_Compiler_EnumerationValue
+  #Font_0
+EndEnumeration
+
+LoadFont(#Font_0,"宋体", 14)
+
+Procedure Inithwnd()
+  hwnd = OpenWindow(#PB_Any, 0, 0, 500, 300, "UART_controlpanel", #PB_Window_SystemMenu | #PB_Window_MinimizeGadget | #PB_Window_ScreenCentered)
+  CreateToolbar(0, WindowID(hwnd))
+  ToolBarImageButton(#Toolbar_0,ImageID())
+  ToolBarToolTip(0, #Toolbar_0, "读取")
+  ToolBarImageButton(#Toolbar_1,ImageID())
+  ToolBarToolTip(0, #Toolbar_1, "修改")
+  ToolBarSeparator()
+  ToolBarImageButton(#Toolbar_3,ImageID())
+  ToolBarToolTip(0, #Toolbar_3, "关于")
+  CreateStatusBar(0, WindowID(hwnd))
+  AddStatusBarField(250)
+  StatusBarText(0, 0, "BASIC")
+  AddStatusBarField(240)
+  StatusBarText(0, 1, "EXT")
+  Panel_0 = PanelGadget(#PB_Any, 0, ToolBarHeight(0) + 0, 500, 255)
+  SetGadgetFont(Panel_0, FontID(#Font_0))
+  AddGadgetItem(Panel_0, -1, "基本参数BASIC")
+  Combo_2 = ComboBoxGadget(#PB_Any, 70, 10, 150, 20)
+  Combo_2_Copy1 = ComboBoxGadget(#PB_Any, 70, 40, 150, 20)
+  Combo_2_Copy1_Copy1 = ComboBoxGadget(#PB_Any, 70, 70, 150, 20)
+  Combo_2_Copy1_Copy2 = ComboBoxGadget(#PB_Any, 70, 100, 150, 20)
+  Text_0 = TextGadget(#PB_Any, 10, 12, 50, 15, 波特率)
+  Text_0_Copy1 = TextGadget(#PB_Any, 10, 42, 50, 15, "数据位")
+  Text_0_Copy2 = TextGadget(#PB_Any, 10, 72, 50, 15, "校验位")
+  Text_0_Copy3 = TextGadget(#PB_Any, 10, 102, 50, 15, "停止位")
+  AddGadgetItem(Panel_0, -1, "扩展参数EXT")
+  CloseGadgetList()
+EndProcedure
+

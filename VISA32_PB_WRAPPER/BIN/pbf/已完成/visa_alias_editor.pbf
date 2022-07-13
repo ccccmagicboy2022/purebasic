@@ -1,0 +1,37 @@
+; Form Designer for Purebasic - 5.0
+; Warning: this file uses a strict syntax, if you edit it, make sure to respect the Form Designer limitation or it won't be opened again.
+
+Global hwnd
+
+Global ini_lig
+
+Enumeration #PB_Compiler_EnumerationValue
+  #Toolbar_0
+  #Toolbar_1
+  #Toolbar_7
+  #Toolbar_3
+  #Toolbar_4
+  #Toolbar_6
+EndEnumeration
+
+Procedure Inithwnd()
+  hwnd = OpenWindow(#PB_Any, 0, 0, 450, 300, "visa_alias_editor", #PB_Window_SystemMenu | #PB_Window_MinimizeGadget | #PB_Window_ScreenCentered)
+  CreateToolbar(0, WindowID(hwnd))
+  ToolBarImageButton(#Toolbar_0,ImageID())
+  ToolBarToolTip(0, #Toolbar_0, "读取")
+  ToolBarImageButton(#Toolbar_1,ImageID())
+  ToolBarToolTip(0, #Toolbar_1, "回写")
+  ToolBarImageButton(#Toolbar_7,ImageID())
+  ToolBarToolTip(0, #Toolbar_7, "CHECK ALL")
+  ToolBarSeparator()
+  ToolBarImageButton(#Toolbar_3,ImageID())
+  ToolBarToolTip(0, #Toolbar_3, "添加RSRC")
+  ToolBarImageButton(#Toolbar_4,ImageID())
+  ToolBarToolTip(0, #Toolbar_4, "删除RSRC")
+  ToolBarSeparator()
+  ToolBarImageButton(#Toolbar_6,ImageID(), #PB_ToolBar_Toggle)
+  ToolBarToolTip(0, #Toolbar_6, "关于")
+  ini_lig = ListIconGadget(#PB_Any, 0, ToolBarHeight(0) + 0, 450, 278, "RSRC", 225, #PB_ListIcon_GridLines | #PB_ListIcon_FullRowSelect | #PB_ListIcon_AlwaysShowSelection)
+  AddGadgetColumn(ini_lig, 1, "ALIAS", 225)
+EndProcedure
+
