@@ -1,0 +1,74 @@
+BASSMOD.dll::BASSMOD_ErrorGetCode
+BASSMOD.dll::BASSMOD_Free
+BASSMOD.dll::BASSMOD_GetCPU
+BASSMOD.dll::BASSMOD_GetDeviceDescription
+BASSMOD.dll::BASSMOD_GetVersion
+BASSMOD.dll::BASSMOD_GetVolume
+BASSMOD.dll::BASSMOD_Init
+BASSMOD.dll::BASSMOD_MusicFree
+BASSMOD.dll::BASSMOD_MusicGetLength
+BASSMOD.dll::BASSMOD_MusicGetName
+BASSMOD.dll::BASSMOD_MusicGetPosition
+BASSMOD.dll::BASSMOD_MusicIsActive
+BASSMOD.dll::BASSMOD_MusicLoad
+BASSMOD.dll::BASSMOD_MusicPause
+BASSMOD.dll::BASSMOD_MusicPlay
+BASSMOD.dll::BASSMOD_MusicPlayEx
+BASSMOD.dll::BASSMOD_MusicRemoveSync
+BASSMOD.dll::BASSMOD_MusicSetAmplify
+BASSMOD.dll::BASSMOD_MusicSetPanSep
+BASSMOD.dll::BASSMOD_MusicSetPosition
+BASSMOD.dll::BASSMOD_MusicSetPositionScaler
+BASSMOD.dll::BASSMOD_MusicSetSync
+BASSMOD.dll::BASSMOD_MusicStop
+BASSMOD.dll::BASSMOD_SetVolume
+CPUID_Util.dll::GetCPUID
+GetDiskSerial.dll::GetBufferSize
+GetDiskSerial.dll::GetBytesPerSector
+GetDiskSerial.dll::GetCylinders
+GetDiskSerial.dll::GetDiskVolumeNumber
+GetDiskSerial.dll::GetDllVer
+GetDiskSerial.dll::GetDriveCount
+GetDiskSerial.dll::GetDriveInfo
+GetDiskSerial.dll::GetDriveLetter
+GetDiskSerial.dll::GetDriveSize
+GetDiskSerial.dll::GetFirmwareRev
+GetDiskSerial.dll::GetHeads
+GetDiskSerial.dll::GetInterfaceType
+GetDiskSerial.dll::GetMediaType
+GetDiskSerial.dll::GetModelNumber
+GetDiskSerial.dll::GetSectors
+GetDiskSerial.dll::GetSectorsPerTrack
+GetDiskSerial.dll::GetSerialNumber
+GetDiskSerial.dll::SetLicenseKey
+md5_cv.dll::md5_cv
+SkinH.dll::SkinH_AdjustAero
+SkinH.dll::SkinH_AdjustHSV
+SkinH.dll::SkinH_Attach
+SkinH.dll::SkinH_AttachEx
+SkinH.dll::SkinH_AttachExt
+SkinH.dll::SkinH_AttachRes
+SkinH.dll::SkinH_AttachResEx
+SkinH.dll::SkinH_Detach
+SkinH.dll::SkinH_DetachEx
+SkinH.dll::SkinH_GetColor
+SkinH.dll::SkinH_LockUpdate
+SkinH.dll::SkinH_Map
+SkinH.dll::SkinH_NineBlt
+SkinH.dll::SkinH_SetAero
+SkinH.dll::SkinH_SetBackColor
+SkinH.dll::SkinH_SetFont
+SkinH.dll::SkinH_SetFontEx
+SkinH.dll::SkinH_SetForeColor
+SkinH.dll::SkinH_SetMenuAlpha
+SkinH.dll::SkinH_SetTitleMenuBar
+SkinH.dll::SkinH_SetWindowAlpha
+SkinH.dll::SkinH_SetWindowMovable
+SkinH.dll::SkinH_VerifySign
+Total count is 67.
+BASSMOD.dll 无法判断dll版本！
+CPUID_Util.dll 无法判断dll版本！
+CVPXIRUNTIMESN.dll version is : v1.0.0.137
+GetDiskSerial.dll 无法判断dll版本！
+md5_cv.dll version is : v1.0.0.2
+SkinH.dll 无法判断dll版本！

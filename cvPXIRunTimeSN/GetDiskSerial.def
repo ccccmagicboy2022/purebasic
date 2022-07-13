@@ -1,0 +1,21 @@
+LIBRARY GetDiskSerial.dll
+
+EXPORTS
+GetBufferSize			@7
+GetBytesPerSector		@2
+GetCylinders			@6
+GetDiskVolumeNumber		@1
+GetDllVer			@17
+GetDriveCount			@16
+GetDriveInfo			@15
+GetDriveLetter			@14
+GetDriveSize			@13
+GetFirmwareRev			@10
+GetHeads			@5
+GetInterfaceType		@9
+GetMediaType			@8
+GetModelNumber			@11
+GetSectors			@4
+GetSectorsPerTrack		@3
+GetSerialNumber@4			@12
+SetLicenseKey			@18

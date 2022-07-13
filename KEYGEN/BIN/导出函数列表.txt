@@ -1,0 +1,24 @@
+CPUID_Util.dll::GetCPUID
+GetDiskSerial.dll::GetBufferSize
+GetDiskSerial.dll::GetBytesPerSector
+GetDiskSerial.dll::GetCylinders
+GetDiskSerial.dll::GetDiskVolumeNumber
+GetDiskSerial.dll::GetDllVer
+GetDiskSerial.dll::GetDriveCount
+GetDiskSerial.dll::GetDriveInfo
+GetDiskSerial.dll::GetDriveLetter
+GetDiskSerial.dll::GetDriveSize
+GetDiskSerial.dll::GetFirmwareRev
+GetDiskSerial.dll::GetHeads
+GetDiskSerial.dll::GetInterfaceType
+GetDiskSerial.dll::GetMediaType
+GetDiskSerial.dll::GetModelNumber
+GetDiskSerial.dll::GetSectors
+GetDiskSerial.dll::GetSectorsPerTrack
+GetDiskSerial.dll::GetSerialNumber
+GetDiskSerial.dll::SetLicenseKey
+md5_cv.dll::md5_cv
+Total count is 20.
+CPUID_Util.dll 无法判断dll版本！
+GetDiskSerial.dll 无法判断dll版本！
+md5_cv.dll version is : v1.0.0.2
