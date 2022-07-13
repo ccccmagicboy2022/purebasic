@@ -1,0 +1,8 @@
+*.txt|notepad
+*.bom|notepad++
+*.brd|allegro
+*.dsn|capture
+*.ddd|diagram_designer
+*.dsw|vc6
+*.dsp|vc6
+*.vi|vi_launcher or labview

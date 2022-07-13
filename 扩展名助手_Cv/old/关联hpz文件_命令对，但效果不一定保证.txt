@@ -1,0 +1,8 @@
+@echo off
+cls
+color 0A
+set ext_name=hpz
+set open_command=g:\test\Helpinator\helpinator.exe
+cmd /c assoc .%ext_name%=%ext_name%file
+cmd /c ftype %ext_name%file=%open_command% %1
+pause
