@@ -1,0 +1,12 @@
+WINIO32_DLL::GetPhysLong()
+WINIO32_DLL::GetPortVal()
+WINIO32_DLL::InitializeWinIo()
+WINIO32_DLL::InstallWinIoDriver()
+WINIO32_DLL::MapPhysToLin()
+WINIO32_DLL::RemoveWinIoDriver()
+WINIO32_DLL::SetPhysLong()
+WINIO32_DLL::SetPortVal()
+WINIO32_DLL::ShutdownWinIo()
+WINIO32_DLL::UnmapPhysicalMemory()
+Total count is 10.
+WinIo32.dll version is : v3.0.0.0

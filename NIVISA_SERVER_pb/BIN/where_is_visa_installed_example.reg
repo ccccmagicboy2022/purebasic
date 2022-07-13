@@ -1,0 +1,5 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\National Instruments\NI-VISA for Windows 95/NT]
+@=""
+"InstDir"="X:\\VXIPNP\\"

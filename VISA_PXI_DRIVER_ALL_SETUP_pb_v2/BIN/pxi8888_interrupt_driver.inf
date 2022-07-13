@@ -1,0 +1,179 @@
+;===========================================================================
+;  This file was generated using:
+;  NI-VISA Driver Development Wizard version 3.3
+;===========================================================================
+;
+;  This file is for use with Windows XP/2000, LabVIEW RT, 
+;  Red Hat Enterprise Linux WS 3, SuSE Linux Professional 9.1, 
+;  Mandrakelinux 10.0 Official, or Mac OS X (10.3 or later)
+;
+;  This Setup Information File contains the information NI-VISA needs in
+;  order to access your instrument.  Do not modify the contents of this file
+;  unless you are sure about what you are doing.
+;
+;===========================================================================
+;
+;  Windows Installation:
+;  To apply the contents of this file to a system's settings, copy this file
+;  to %SystemRoot%\inf and reboot the computer.  If the device was
+;  installed before this file is copied, the device will need to be removed
+;  from the "Unknown Devices" class in the Windows Device Manager.
+;
+;  Removal:
+;  Remove this file and its associated .PNF file (if it exists) from
+;  %SystemRoot%\inf.  Either reboot the computer, or perform a
+;  "Scan for hardware changes" from the Windows Device Manager.
+;
+;===========================================================================
+;
+;  LabVIEW RT Installation:
+;  To apply the contents of this file to a system's settings, ftp this file
+;  to "/ni-rt/system" and reboot the computer.
+;
+;  Removal:
+;  Remove this file from "/ni-rt/system" and reboot the computer.
+;
+;  NOTE:
+;  This file will only work on LabVIEW RT systems using NI-VISA 3.3
+;  or later.
+;
+;===========================================================================
+;
+;  Linux Installation:
+;  To apply the contents of this file to a system's settings, copy this file
+;  to "/etc/natinst/nipal/inf" and reboot the computer.
+;
+;  Removal:
+;  Remove this file from "/etc/natinst/nipal/inf" and reboot the computer.
+;
+;===========================================================================
+;
+;  Mac OS X Installation:
+;  To apply the contents of this file to a system's settings, copy this file
+;  to "/Library/Application Support/National Instruments/nipal/inf"
+;  and reboot the computer.
+;
+;  Removal
+;  Remove this file from
+;  "/Library/Application Support/National Instruments/nipal/inf"
+;  and reboot the computer.
+;
+;===========================================================================
+
+[Version]
+Signature=$WINDOWS NT$
+Class=visaPxiDevice
+ClassGUID={E1590550-9B9C-11d3-A250-0040055732CC}
+ClassName="visaPxiDevice"
+Provider=%Vendor0%
+DriverVer=%date%, 1.0.1
+
+;===========================================================================
+;   Default Installer
+;===========================================================================
+
+[DefaultInstall]
+CopyFiles=PXI%main_did%.Cfg.CopyFiles.Inf
+
+[DestinationDirs]
+PXI%main_did%.Cfg.CopyFiles.Inf = 17
+
+[PXI%main_did%.Cfg.CopyFiles.Inf]
+PXI%main_did%.inf
+
+;===========================================================================
+;   Class Installer
+;===========================================================================
+
+[ClassInstall32]
+AddReg=AddClassToRegistry
+
+[ClassInstall]
+AddReg=AddClassToRegistry
+
+[AddClassToRegistry]
+HKR,,,0,%DeviceClassString%
+
+;===========================================================================
+
+[ControlFlags]
+ExcludeFromSelect=PCI\VEN_%main_vid%&DEV_%main_did%&SUBSYS_%sub_did%%sub_vid%
+
+;===========================================================================
+
+[Manufacturer]
+%Vendor1%=PCIList
+
+;===========================================================================
+;   PCI Plug and Play Devices
+;===========================================================================
+
+[PCIList]
+%PXI%main_did%.DeviceDescN%=PXI%main_did%.Cfg,PCI\VEN_%main_vid%&DEV_%main_did%&SUBSYS_%sub_did%%sub_vid%
+
+;===========================================================================
+
+[PXI%main_did%.Cfg]
+AddReg=PXI%main_did%.AddReg
+
+[PXI%main_did%.Cfg.Services]
+AddService=nipalk, 0x00000002, nipal_Service_Inst
+
+[PXI%main_did%.AddReg]
+HKR,,DeviceClass,1,72,65,73,75
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","HowToSquelch",0,"R8 BAR2 0x000000C8;W32 BAR0 0x000000A8 0x00000909;W32 BAR0 0x00000064 0xFFFFFFFF;W16 CFG 0x00000006 0x2800;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","EmergencyDisarm",0,""
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine0",0,"C32 BAR0 0x00000068 0x00008000 0x00008000;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine1",0,"C32 BAR0 0x00000068 0x00200000 0x00200000;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine2",0,"C32 BAR0 0x00000068 0x00400000 0x00400000;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine3",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x00000003;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine4",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x00000004;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine5",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x00000005;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine6",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x00000006;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine7",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x00000007;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine8",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x00000008;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine9",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x00000009;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine10",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x0000000A;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine11",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x0000000B;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine12",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x0000000C;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine13",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x0000000D;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine14",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x0000000E;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine15",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x0000000F;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine16",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x00000010;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine17",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x00000011;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine18",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x00000012;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine19",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x00000013;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine20",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x00000014;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine21",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x00000015;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine22",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x00000016;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine23",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x00000017;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine24",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x00000018;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine25",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x00000019;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine26",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x0000001A;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine27",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x0000001B;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine28",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x0000001C;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine29",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x0000001D;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine30",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x0000001E;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine31",0,"C32 BAR0 0x00000068 0x00002000 0x00002000;C32 BAR0 0x00000064 0x000000FF 0x0000001F;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine32",0,"C16 CFG 0x00000006 0x0800 0x0800;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","IsThisMine33",0,"C16 CFG 0x00000006 0x2000 0x2000;"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","numIsThisMineEntries",0x00010001,34
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","ManufName",0,"KT -=cv=-"
+HKLM,"SOFTWARE\National Instruments\Common\NI-PAL Database\NI-VXI\PCI\%main_vid%%main_did%%sub_vid%%sub_did%","ModelName",0,"PXI%main_did%"
+;===========================================================================
+
+[nipal_Service_Inst]
+DisplayName   = %nipal.SvcDesc%
+ServiceType   = 1         ;SERVICE_KERNEL_DRIVER
+StartType     = 0         ;SERVICE_BOOT_START
+ErrorControl  = 1         ;SERVICE_ERROR_NORMAL
+ServiceBinary = %12%\nipalk.sys
+;===========================================================================
+
+[Strings]
+Vendor0="KT -=cv=-"
+Vendor1="KT -=cv=-"
+PXI%main_did%.DeviceDesc="PXI%main_did%_v2.8i"
+PXI%main_did%.DeviceDescN="PXI%main_did%_v2.8i"
+DeviceClassString="NI-VISA PXI Devices"
+nipal.SvcDesc="NI-PAL Driver"
